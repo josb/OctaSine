@@ -16,6 +16,7 @@ mod wave_picker;
 
 use std::io::Write;
 use std::path::PathBuf;
+use std::sync::Arc;
 
 use anyhow::Context;
 use cfg_if::cfg_if;
@@ -33,6 +34,7 @@ use iced_baseview::{
 use iced_baseview::{
     executor, futures::Subscription, runtime::Command, window::WindowSubs, Application,
 };
+use raw_window_handle::{HasRawWindowHandle, RawWindowHandle, AppKitWindowHandle};
 use serde::{Deserialize, Serialize};
 
 use crate::common::NUM_OPERATORS;
@@ -527,7 +529,7 @@ impl<H: GuiSyncHandle> Application for OctaSineIcedApplication<H> {
         &self,
         window_subs: &mut WindowSubs<Self::Message>,
     ) -> Subscription<Self::Message> {
-        window_subs.on_frame = Some(|| Message::Frame);
+        window_subs.on_frame = Some(Arc::new(|| Some(Message::Frame)));
 
         Subscription::none()
     }
@@ -1074,11 +1076,12 @@ pub fn get_iced_baseview_settings<H: GuiSyncHandle>(
             always_redraw: true,
         },
         flags: sync_handle,
+        fonts: Default::default(),
     }
 }
 
 #[cfg(target_os = "macos")]
-struct CurrentWindowHandle(rwh05::RawWindowHandle);
+struct CurrentWindowHandle(RawWindowHandle);
 
 #[cfg(target_os = "macos")]
 impl CurrentWindowHandle {
@@ -1101,19 +1104,19 @@ impl CurrentWindowHandle {
                 return None;
             }
 
-            let mut handle = rwh05::AppKitWindowHandle::empty();
+            let mut handle = AppKitWindowHandle::empty();
 
             handle.ns_window = ns_window as *mut core::ffi::c_void;
             handle.ns_view = ns_view as *mut core::ffi::c_void;
 
-            Some(Self(rwh05::RawWindowHandle::AppKit(handle)))
+            Some(Self(RawWindowHandle::AppKit(handle)))
         }
     }
 }
 
 #[cfg(target_os = "macos")]
-unsafe impl rwh05::HasRawWindowHandle for CurrentWindowHandle {
-    fn raw_window_handle(&self) -> rwh05::RawWindowHandle {
+unsafe impl HasRawWindowHandle for CurrentWindowHandle {
+    fn raw_window_handle(&self) -> RawWindowHandle {
         self.0
     }
 }

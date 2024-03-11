@@ -46,13 +46,18 @@ fn plot_saw(filename: &str) {
     }
 
     let fallback = make_plot::<octasine::simd::FallbackPackedDouble>("green");
+    #[cfg(target_arch = "x86_64")]
     let sse2 = make_plot::<octasine::simd::Sse2PackedDouble>("red");
+    #[cfg(target_arch = "x86_64")]
     let avx = make_plot::<octasine::simd::AvxPackedDouble>("blue");
 
     let mut v = ContinuousView::new()
-        .add(fallback)
-        .add(sse2)
-        .add(avx)
+        .add(fallback);
+    #[cfg(target_arch = "x86_64")]
+    let mut v = v.add(sse2);
+    #[cfg(target_arch = "x86_64")]
+    let mut v = v.add(avx);
+    let mut v = v
         .x_range(-2.0, 2.0)
         .y_range(-2.0, 2.0);
 
@@ -85,14 +90,19 @@ fn plot_square(filename: &str) {
     }
 
     let fallback = make_plot::<octasine::simd::FallbackPackedDouble>("green");
+    #[cfg(target_arch = "x86_64")]
     let sse2 = make_plot::<octasine::simd::Sse2PackedDouble>("red");
+    #[cfg(target_arch = "x86_64")]
     let avx = make_plot::<octasine::simd::AvxPackedDouble>("blue");
 
     let mut v = ContinuousView::new()
-        .add(fallback)
-        .add(sse2)
-        .add(avx)
-        .x_range(-2.0, 2.0)
+        .add(fallback);
+    #[cfg(target_arch = "x86_64")]
+    let mut v = v.add(sse2);
+    #[cfg(target_arch = "x86_64")]
+    let mut v = v.add(avx);
+    let mut v = v.
+        x_range(-2.0, 2.0)
         .y_range(-2.0, 2.0);
 
     v.add_grid(Grid::new(4, 4));
@@ -124,13 +134,18 @@ fn plot_triangle(filename: &str) {
     }
 
     let fallback = make_plot::<octasine::simd::FallbackPackedDouble>("green");
+    #[cfg(target_arch = "x86_64")]
     let sse2 = make_plot::<octasine::simd::Sse2PackedDouble>("red");
+    #[cfg(target_arch = "x86_64")]
     let avx = make_plot::<octasine::simd::AvxPackedDouble>("blue");
 
     let mut v = ContinuousView::new()
-        .add(fallback)
-        .add(sse2)
-        .add(avx)
+        .add(fallback);
+    #[cfg(target_arch = "x86_64")]
+    let mut v = v.add(sse2);
+    #[cfg(target_arch = "x86_64")]
+    let mut v = v.add(avx);
+    let mut v = v
         .x_range(-2.0, 2.0)
         .y_range(-2.0, 2.0);
 
