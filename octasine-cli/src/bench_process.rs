@@ -19,7 +19,7 @@ pub fn run() -> anyhow::Result<()> {
 
     let mut all_sleef_hashes_match = true;
 
-    let fallback_speed = {
+    let _fallback_speed = {
         let (success, r) = benchmark::<octasine::simd::Fallback>("fallback", hash);
 
         all_sleef_hashes_match &= success;

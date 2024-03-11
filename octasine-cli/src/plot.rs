@@ -51,7 +51,7 @@ fn plot_saw(filename: &str) {
     #[cfg(target_arch = "x86_64")]
     let avx = make_plot::<octasine::simd::AvxPackedDouble>("blue");
 
-    let mut v = ContinuousView::new()
+    let v = ContinuousView::new()
         .add(fallback);
     #[cfg(target_arch = "x86_64")]
     let mut v = v.add(sse2);
@@ -95,7 +95,7 @@ fn plot_square(filename: &str) {
     #[cfg(target_arch = "x86_64")]
     let avx = make_plot::<octasine::simd::AvxPackedDouble>("blue");
 
-    let mut v = ContinuousView::new()
+    let v = ContinuousView::new()
         .add(fallback);
     #[cfg(target_arch = "x86_64")]
     let mut v = v.add(sse2);
@@ -139,7 +139,7 @@ fn plot_triangle(filename: &str) {
     #[cfg(target_arch = "x86_64")]
     let avx = make_plot::<octasine::simd::AvxPackedDouble>("blue");
 
-    let mut v = ContinuousView::new()
+    let v = ContinuousView::new()
         .add(fallback);
     #[cfg(target_arch = "x86_64")]
     let mut v = v.add(sse2);
