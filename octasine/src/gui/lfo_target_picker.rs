@@ -1,4 +1,4 @@
-use iced_baseview::core::{Element, Length};
+use iced_baseview::core::{Length};
 use iced_baseview::widget::text::LineHeight;
 use iced_baseview::widget::PickList;
 

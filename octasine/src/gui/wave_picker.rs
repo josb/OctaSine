@@ -4,7 +4,7 @@ use iced_baseview::widget::canvas::{
 };
 use iced_baseview::widget::tooltip::Position;
 use iced_baseview::{
-    core::{alignment::Horizontal, Alignment, Color, Element, Length, Point, Rectangle, Size},
+    core::{alignment::Horizontal, Alignment, Color, Length, Point, Rectangle, Size},
     widget::Column,
     widget::Space,
     widget::Text,

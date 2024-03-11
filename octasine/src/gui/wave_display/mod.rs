@@ -3,7 +3,7 @@ mod gen;
 use std::borrow::Borrow;
 
 use iced_baseview::core::mouse::Cursor;
-use iced_baseview::core::{Color, Element, Length, Point, Rectangle, Size};
+use iced_baseview::core::{Color, Length, Point, Rectangle, Size};
 use iced_baseview::widget::canvas::{path, Cache, Canvas, Frame, Geometry, Path, Program, Stroke};
 use iced_baseview::widget::tooltip::Position;
 use iced_baseview::{widget::Row, widget::Space};

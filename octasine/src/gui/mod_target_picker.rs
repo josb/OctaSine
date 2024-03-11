@@ -1,6 +1,6 @@
 use iced_baseview::widget::tooltip::Position;
 use iced_baseview::{
-    core::{alignment::Horizontal, Alignment, Element, Length},
+    core::{alignment::Horizontal, Alignment, Length},
     widget::Checkbox,
     widget::Column,
     widget::Space,

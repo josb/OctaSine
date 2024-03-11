@@ -1,6 +1,6 @@
 use iced_baseview::widget::tooltip::Position;
 use iced_baseview::{
-    core::{alignment::Horizontal, Alignment, Element, Length},
+    core::{alignment::Horizontal, Alignment, Length},
     widget::Column,
     widget::Container,
     widget::Row,
@@ -25,7 +25,7 @@ use super::style::Theme;
 use super::wave_display::WaveDisplay;
 use super::wave_picker::WavePicker;
 use super::{mod_target_picker, LINE_HEIGHT_RELATIVE};
-use super::{Message, FONT_SIZE, LINE_HEIGHT};
+use super::{FONT_SIZE, LINE_HEIGHT};
 
 pub enum ModTargetPicker {
     Operator4(mod_target_picker::ModTargetPicker<Operator4ModulationTargetValue>),

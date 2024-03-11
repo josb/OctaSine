@@ -21,13 +21,13 @@ use std::sync::Arc;
 use anyhow::Context;
 use cfg_if::cfg_if;
 use compact_str::CompactString;
-use iced_aw::native::{Card, Modal};
-use iced_baseview::core::alignment::Horizontal;
-use iced_baseview::core::Pixels;
+
+
+
 use iced_baseview::graphics::Antialiasing;
 use iced_baseview::runtime::command::Action;
 use iced_baseview::widget::text::LineHeight;
-use iced_baseview::widget::{Button, PickList, Text};
+
 use iced_baseview::{
     core::Length, core::Point, widget::Column, widget::Container, widget::Row, widget::Space,
 };
@@ -49,7 +49,7 @@ use style::Theme;
 use self::corner::CornerWidgets;
 use self::operator::ModTargetPicker;
 use self::style::container::ContainerStyle;
-use self::style::OPEN_SANS_SEMI_BOLD;
+
 
 use crate::settings::Settings;
 

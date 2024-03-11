@@ -1,5 +1,5 @@
 use iced_baseview::{
-    core::{alignment::Horizontal, Alignment, Element, Length},
+    core::{alignment::Horizontal, Alignment, Length},
     widget::tooltip::Position,
     widget::Button,
     widget::Container,

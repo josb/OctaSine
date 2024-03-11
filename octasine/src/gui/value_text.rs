@@ -1,7 +1,7 @@
 use std::marker::PhantomData;
 
 use compact_str::CompactString;
-use iced_baseview::core::{alignment::Horizontal, Element, Length};
+use iced_baseview::core::{alignment::Horizontal, Length};
 use iced_baseview::widget::Button;
 use iced_baseview::widget::Text;
 

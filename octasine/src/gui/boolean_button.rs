@@ -1,6 +1,6 @@
 use iced_baseview::core::alignment::{Horizontal, Vertical};
 use iced_baseview::core::mouse::Cursor;
-use iced_baseview::core::{Color, Element, Length, Point, Rectangle, Size};
+use iced_baseview::core::{Color, Length, Point, Rectangle, Size};
 use iced_baseview::widget::canvas::{
     event, Cache, Canvas, Frame, Geometry, Path, Program, Stroke, Text,
 };

@@ -4,7 +4,7 @@ use iced_baseview::core::alignment::Horizontal;
 use iced_baseview::core::Font;
 use iced_baseview::widget::tooltip::Position;
 use iced_baseview::{
-    core::Alignment, core::Element, core::Length, widget::Button, widget::Column, widget::Row,
+    core::Alignment, core::Length, widget::Button, widget::Column, widget::Row,
     widget::Space, widget::Text,
 };
 

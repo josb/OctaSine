@@ -1,8 +1,8 @@
-use iced_baseview::widget::text::LineHeight;
+
 use iced_baseview::widget::tooltip::Position;
 use iced_baseview::widget::Container;
 use iced_baseview::{
-    core::{alignment::Horizontal, alignment::Vertical, Element, Length},
+    core::{alignment::Horizontal, alignment::Vertical, Length},
     widget::Column,
     widget::Row,
     widget::Space,
@@ -23,7 +23,7 @@ use super::knob::{self, OctaSineKnob};
 use super::lfo_target_picker::LfoTargetPicker;
 use super::style::Theme;
 use super::wave_picker::WavePicker;
-use super::{Message, FONT_SIZE, LINE_HEIGHT, LINE_HEIGHT_RELATIVE};
+use super::{FONT_SIZE, LINE_HEIGHT, LINE_HEIGHT_RELATIVE};
 
 pub struct LfoWidgets {
     index: usize,

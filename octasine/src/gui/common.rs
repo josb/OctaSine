@@ -1,7 +1,7 @@
 use std::borrow::Cow;
 
 use iced_baseview::{
-    core::{Element, Length},
+    core::{Length},
     widget::Column,
     widget::Row,
     widget::Space,
