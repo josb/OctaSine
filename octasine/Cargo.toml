@@ -82,9 +82,9 @@ tinyfiledialogs = { version = "3", optional = true }
 
 [dependencies.iced_baseview]
 git = "https://github.com/BillyDM/iced_baseview.git"
-rev = "9506c90"
+rev = "4feacc0"
 default-features = false
-# features = ["canvas"]
+features = ["canvas"]
 optional = true
 
 [target.'cfg(target_os="macos")'.dependencies]
