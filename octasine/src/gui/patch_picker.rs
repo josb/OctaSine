@@ -6,7 +6,7 @@ use iced_baseview::widget::text::LineHeight;
 use iced_baseview::widget::tooltip::Position;
 use iced_baseview::widget::{PickList, Row};
 use iced_baseview::{
-    core::{Length},
+    core::Length,
     widget::Column,
     widget::Container,
     widget::Space,
